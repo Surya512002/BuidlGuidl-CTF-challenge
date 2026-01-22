@@ -30,3 +30,11 @@ which contains the deployed contracts addresses and ABIs.
 Start the frontend (NextJS app):
 yarn start
 Now your app on http://localhost:3000 is running entirely locally. You can break things without any consequences :)
+
+You need to Get flag you need to deploy the contracts on optimism mainnet..So make sure you imported your account on that..
+You can easily import you account by following comments-- yarn account import 
+you need to paste your private key after that..
+
+it will add your wallet..make sure you have atleast 3$ worth of optimisim in your wallet to complete this S1 12 challenges..
+
+Now you are ready to go...
