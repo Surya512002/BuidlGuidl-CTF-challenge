@@ -2,3 +2,83 @@ For complet Challenge 6 you need 2 files..
 
 First one is create a file buildguild/packages/hardhat/contracts/S1Challenge6Solver.sol
 
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+interface IChallenge6 {
+    function count() external view returns (uint256);
+    function mintFlag(uint256 _code) external;
+}
+
+contract CtfChallenge6 {
+    IChallenge6 public challenge;
+
+    constructor(address _challengeAddress) {
+        challenge = IChallenge6(_challengeAddress);
+    }
+
+    function name() external pure returns (string memory) {
+        return "BG CTF Challenge 6 Solution";
+    }
+
+    function startMint() external {
+        uint256 code = challenge.count() << 8;
+
+        // We want gasleft() to be between 190,000 and 200,000.
+        // We target 198,000 to allow for the small overhead of the call itself.
+        while (gasleft() > 198000) {
+            // Burn a tiny amount of gas
+            uint256 dummy = 0;
+            dummy++;
+        }
+
+        challenge.mintFlag(code);
+    }
+}
+
+Second one is buildguild/packages/hardhat/deploy/06_deploy_s1_challenge_6.ts
+
+import { HardhatRuntimeEnvironment } from "hardhat/types";
+import { DeployFunction } from "hardhat-deploy/types";
+
+const deployS1Challenge6: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const { deployer } = await hre.getNamedAccounts();
+  const { deploy } = hre.deployments;
+  const { ethers } = hre;
+
+  const challengeAddress = "0x75961D2da1DEeBaEC24cD0E180187E6D55F55840";
+
+  const deployment = await deploy("CtfChallenge6", {
+    from: deployer,
+    args: [challengeAddress],
+    log: true,
+  });
+
+  const solver = await ethers.getContractAt("CtfChallenge6", deployment.address);
+
+  // ... existing imports ...
+
+  console.log("🛰 Sending transaction with MUCH higher gas for burning...");
+
+  try {
+    // 800,000 is safe. The contract will only use what it needs to hit the 198k target.
+    const tx = await solver.startMint({
+      gasLimit: 800000,
+    });
+    console.log("⏳ Transaction sent... burning gas to hit the window...");
+    await tx.wait();
+    console.log("✨ SUCCESS! Flag #10 is yours.");
+  } catch (error: any) {
+    console.log("❌ Failed.");
+    // If it still fails, it might be the 'code' (count) is wrong.
+    console.error("Reason:", error.message);
+  }
+  // ...
+};
+
+export default deployS1Challenge6;
+deployS1Challenge6.tags = ["S1Challenge6"];
+
+Run this comment on terminal second
+
+// yarn deploy --tags S1Challenge6 --network optimism
