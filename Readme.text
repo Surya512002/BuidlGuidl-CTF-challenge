@@ -1,0 +1,32 @@
+Before you start the Challenge Make sure you have Setted up the environment..
+
+Requirements
+You'll need to have the following tools installed in your machine:
+
+Node (>= v18.18)
+Yarn (v1 or v2+)
+Git
+Foundryup (if foundry is selected)
+Note for Windows users. Foundryup is not currently supported by Powershell or Cmd, and has issues with Git Bash. 
+You will need to use WSL as your terminal.
+
+Setting up your local testing environment
+First, install the Scaffold-ETH 2 CTF extension with create-eth:
+
+npx create-eth@2.0.2 -e buidlguidl/ctf.buidlguidl.com:extension
+This will create a new folder with all the tools you need to play the CTF locally. 
+Afterward, you’ll be able to deploy the solutions to Optimism and capture the flags in the live game.
+
+Go into the folder and run the following commands in separate terminals:
+
+Run a local blockchain:
+yarn chain
+Deploy the challenges contracts locally:
+hardhat
+foundry
+Note: This command will update the deployedContracts.ts file (in the scripts and nextjs packages), 
+which contains the deployed contracts addresses and ABIs.
+
+Start the frontend (NextJS app):
+yarn start
+Now your app on http://localhost:3000 is running entirely locally. You can break things without any consequences :)
