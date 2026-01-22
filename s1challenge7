@@ -56,4 +56,6 @@ const deployS1Challenge7: DeployFunction = async function (hre: HardhatRuntimeEn
 export default deployS1Challenge7;
 deployS1Challenge7.tags = ["S1Challenge7"];
 
+Run this comment on second terminal..
+
 // yarn deploy --tags S1Challenge7 --network optimism
