@@ -16,36 +16,35 @@ contract CtfChallenge3 {
     }
 }
 
-Create a new file in packages/hardhat/deploy/02_deploy_challenge_2_solution.ts
+Create a new file in packages/hardhat/deploy/03_deploy_challenge_3_solution.ts
 
-import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
+import { HardhatRuntimeEnvironment } from "hardhat/types";
 
-const deploySolution: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  const { deployer } = await hre.getNamedAccounts();
-  const { deploy } = hre.deployments;
+const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const { deployments, getNamedAccounts, network } = hre;
+  const { deploy, log } = deployments;
+  const { deployer } = await getNamedAccounts();
 
-  // --- DELETE OR COMMENT OUT THIS LINE ---
-  // const challenge2 = await hre.ethers.getContract("Challenge2");
-  
-  // --- ADD THIS LINE ---
-  // PASTE THE REAL ADDRESS FROM THE WEBSITE BELOW
-  const challenge2Address = "0x0b997E0a306c47EEc755Df75fad7F41977C5582d"; 
+  log(`🚀 Deploying CtfChallenge3 to ${network.name} using ${deployer}`);
 
-  console.log("😈 Attacking Challenge 2 at:", challenge2Address);
-
-  await deploy("Challenge2Solution", {
+  await deploy("CtfChallenge3", {
+    // This string must match the contract name in .sol
     from: deployer,
-    args: [challenge2Address], // Use the variable you just created
+    args: ["0x03bF70f50fcF9420f27e31B47805bbd8f2f52571"],
     log: true,
-    autoMine: true,
+    gasLimit: 1000000,
   });
 };
+
+export default func;
+func.tags = ["CtfChallenge3"];
+
 
 export default deploySolution;
 deploySolution.tags = ["Challenge2Solution"];
 
-Save this file and go to your second terminal..run this comment yarn deploy --tags challenge2solution --network optimism
+Save this file and go to your second terminal..run this comment = yarn deploy --tags S1Challenge3 --network optimism --reset
 
 
 
