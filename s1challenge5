@@ -81,4 +81,6 @@ deployS2Challenge5.tags = ["S1Challenge5"];
 
 Save abouve code in that file..
 
+run this code to mint the flag..= yarn deploy --tags s1challenge5 --network optimism
+
 
