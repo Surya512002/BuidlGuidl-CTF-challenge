@@ -1,8 +1,8 @@
 For challenge-09 Only need deploy file..
 
-Create a file buildguild/packages/hardhat/deploy/10_deploy_s1_challenge_10.ts
+Create a file at his dir -- buildguild/packages/hardhat/deploy/10_deploy_s1_challenge_10.ts --
 
-Save this code into 10_deploy_s1_challenge_10.ts 
+Save this code into this file... -- 10_deploy_s1_challenge_10.ts --
 
 👇
 
@@ -92,8 +92,11 @@ solveS1Challenge10.tags = ["S1Challenge10"];
 👆
 
 Run this comment on your second terminal..
+
 bash
-    yarn deploy --tags S1Challenge10 --network optimism --reset
+     yarn deploy --tags S1Challenge10 --network optimism --reset
+
+you will see a mint flag on your terminal..
 
 
 
