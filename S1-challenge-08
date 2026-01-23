@@ -1,6 +1,9 @@
 For complete this challenge You only need Deploy contract..
 
-Create a File -buildguild/packages/hardhat/deploy/08_deploy_s1_challenge_8.ts
+Create a File -buildguild/packages/hardhat/deploy/08_deploy_s1_challenge_8.ts 
+
+save this code👇
+
 
 import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -46,6 +49,9 @@ const solveS1Challenge8: DeployFunction = async function (hre) {
 
 export default solveS1Challenge8;
 solveS1Challenge8.tags = ["S1Challenge8"];
+
+
+👆
 
 Run this Code -
 bash 
