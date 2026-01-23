@@ -1,8 +1,8 @@
 For 12th you only need one file...
 
-Create a file at  buildguild/packages/hardhat/deploy/12_deploy_s1_challenge_12.ts
+Create a file at  in this dir -- buildguild/packages/hardhat/deploy/12_deploy_s1_challenge_12.ts
 
-Save this below code at 12_deploy_s1_challenge_12.ts this file...
+Save this below code at -- 12_deploy_s1_challenge_12.ts -- in this file...
 
 👇
 
@@ -109,10 +109,14 @@ export default solveS1Challenge12;
 solveS1Challenge12.tags = ["S1Challenge12"];
 
 👆
-Run this code on your second terminal
+
+Run this code on your second terminal..
 
 bash
       yarn deploy --tags S1Challenge12 --network optimism --reset
+
+
+you will see mint flag on your terminal...
 
 
 
