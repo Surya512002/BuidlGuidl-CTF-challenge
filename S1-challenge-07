@@ -1,8 +1,10 @@
 For challenge seven you only need deployer file to complete this...
 
-Create a file in -buildguild/packages/hardhat/deploy/07_deploy_s1_challenge_7.ts
+Create a file in this dir -- buildguild/packages/hardhat/deploy/07_deploy_s1_challenge_7.ts --
 
-Save this below code in that file..👇
+Save this below code in this file..-- 07_deploy_s1_challenge_7.ts --
+
+👇
 
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -62,3 +64,7 @@ Run this comment on second terminal..
 
 bash
      yarn deploy --tags S1Challenge7 --network optimism --reset
+
+you will see a mint flag on your terminal..
+
+Congradulations.. you completed S1-challenge-07 ...
