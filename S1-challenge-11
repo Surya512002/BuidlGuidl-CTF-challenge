@@ -1,6 +1,6 @@
 For challenge-11 you need 2 files...
 
-First create a file at -  buildguild/packages/hardhat/contracts/S1Challenge11Solver.sol
+First create a file at dir --  buildguild/packages/hardhat/contracts/S1Challenge11Solver.sol  --
 
 save this code at S1Challenge11Solver.sol file..
 
@@ -21,7 +21,7 @@ contract S1Challenge11Solver {
 
 👆
 
-Now create a second file at buildguild/packages/hardhat/deploy/11_deploy_s1_challenge_11.ts
+Now create a second file at this dir -- buildguild/packages/hardhat/deploy/11_deploy_s1_challenge_11.ts --
 
 Save this below code at 11_deploy_s1_challenge_11.ts file ..
 
@@ -91,10 +91,15 @@ solveS1Challenge11.tags = ["S1Challenge11"]; // FIX: Matches your CLI command
 
 👆
 
-Run this code on your second terminal.
+Run this code on your second terminal...
 
 bash
        yarn deploy --tags S1Challenge11 --network optimism --reset
+
+You will see a mint flag on your terminal..
+
+
+
 
 
 
