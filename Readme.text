@@ -1,31 +1,33 @@
 Before you start the Challenge Make sure you have Setted up the environment..
 
-Requirements
+Requirements:
+
 You'll need to have the following tools installed in your machine:
 
 bash
-      Node (>= v18.18)
-      Yarn (v1 or v2+)
-      Git
+      [Node (>= v18.18)](https://nodejs.org/en/blog/release/v20.9.0)
+      [Yarn (v1 or v2+)](https://yarnpkg.com/getting-started/install)
+      [Git](https://git-scm.com/install/)
       
 Foundryup (if foundry is selected), but we use hardhat here..
-Note for Windows users. Foundryup is not currently supported by Powershell or Cmd, and has issues with Git Bash. 
-You will need to use WSL as your terminal.
+              Note for Windows users. Foundryup is not currently supported by Powershell or Cmd, and has issues with Git Bash. 
+              You will need to use WSL as your terminal.
 
-Setting up your local testing environment
+Setting up your local testing environment 
+
 First, install the Scaffold-ETH 2 CTF extension with create-eth:
 
-bash
-       npx create-eth@2.0.2 -e buidlguidl/ctf.buidlguidl.com:extension
-       
+     bash
+        npx create-eth@2.0.2 -e buidlguidl/ctf.buidlguidl.com:extension
+        
 This will create a new folder with all the tools you need to play the CTF locally. 
 Afterward, you’ll be able to deploy the solutions to Optimism and capture the flags in the live game.
 
 Go into the folder and run the following commands in separate terminals:
 
 Run a local blockchain:
-bash
-        yarn chain
+     bash
+            yarn chain
 
 Deploy the challenges contracts locally:
 hardhat
@@ -34,16 +36,18 @@ Note: This command will update the deployedContracts.ts file (in the scripts and
 which contains the deployed contracts addresses and ABIs.
 
 Start the frontend (NextJS app):
-bash
-      yarn start
+
+   bash
+       yarn start
       
 Now your app on http://localhost:3000 is running entirely locally. You can break things without any consequences :)
 
 You need to Get flag you need to deploy the contracts on optimism mainnet..So make sure you imported your account on that..
 You can easily import you account by following comments-- 
 
-bash
-      yarn account import 
+   bash
+   
+       yarn account import 
 
 you need to paste your private key after that..
 
