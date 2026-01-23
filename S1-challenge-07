@@ -2,7 +2,7 @@ For challenge seven you only need deployer file to complete this...
 
 Create a file in -buildguild/packages/hardhat/deploy/07_deploy_s1_challenge_7.ts
 
-Save this below code in that file..
+Save this below code in that file..👇
 
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -56,6 +56,9 @@ const deployS1Challenge7: DeployFunction = async function (hre: HardhatRuntimeEn
 export default deployS1Challenge7;
 deployS1Challenge7.tags = ["S1Challenge7"];
 
+
+👆
 Run this comment on second terminal..
 
-// yarn deploy --tags S1Challenge7 --network optimism
+bash
+     yarn deploy --tags S1Challenge7 --network optimism --reset
