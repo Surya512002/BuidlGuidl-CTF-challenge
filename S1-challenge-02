@@ -2,7 +2,9 @@ Before this challange make sure you setted up your environmet..Read readme.text 
 
 Create a file in this Following Directory - packages/hardhat/contracts/Challenge2Solution.sol
 
-Paste this below code into that Challenge2solution.sol
+Paste this below code into that Challenge2solution.sol  
+
+👇 
 
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
@@ -11,6 +13,16 @@ interface IChallenge2 {
     // The specific function name for Challenge 2 (S1)
     function justCallMe() external; 
 }
+contract Challenge2Solution {
+    constructor(address _target) {
+        // Call the correct function name
+        IChallenge2(_target).justCallMe();
+    }
+}
+
+
+👆
+
 
 Create a Another File in this Directory - packages/hardhat/deploy/02_deploy_challenge_2_solution.ts
 
