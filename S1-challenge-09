@@ -1,8 +1,8 @@
 For Challenge-09 also only need deploy contract..
 
-Create a file -buildguild/packages/hardhat/deploy/09_deploy_s1_challenge_9.ts
+Create a file in this Dir.. --  buildguild/packages/hardhat/deploy/09_deploy_s1_challenge_9.ts --
 
-Save this code 👇
+Save this code in this -- 09_deploy_s1_challenge_9.ts --file  👇
 
 import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -63,6 +63,13 @@ solveS1Challenge9.tags = ["S1Challenge9"];
 
 👆
 
-Run this code..
+Run this code on your second terminal....
 
-bash --   yarn deploy --tags S1Challenge9 --network optimism --reset
+bash   
+     yarn deploy --tags S1Challenge9 --network optimism --reset
+
+you will see a mint flag on your terminal...
+
+
+
+
