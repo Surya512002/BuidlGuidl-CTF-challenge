@@ -1,9 +1,10 @@
 For complete this challenge You only need Deploy contract..
 
-Create a File -buildguild/packages/hardhat/deploy/08_deploy_s1_challenge_8.ts 
+Create a File in this dir -- buildguild/packages/hardhat/deploy/08_deploy_s1_challenge_8.ts --
 
-save this code👇
+save this below code in this file -- 08_deploy_s1_challenge_8.ts -- 
 
+👇
 
 import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -53,6 +54,9 @@ solveS1Challenge8.tags = ["S1Challenge8"];
 
 👆
 
-Run this Code -
+Run this Code in your second terminal..
+
 bash 
      yarn deploy --tags S1Challenge8 --network optimism --reset
+
+you will see a mint flag in your terminal...
