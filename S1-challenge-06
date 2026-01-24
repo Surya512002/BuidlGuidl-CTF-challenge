@@ -2,6 +2,10 @@ For complet Challenge 6 you need 2 files..
 
 First one is create a file buildguild/packages/hardhat/contracts/S1Challenge6Solver.sol
 
+Save this below code in this file -- S1Challenge6Solver.sol --
+
+👇
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
@@ -36,7 +40,14 @@ contract CtfChallenge6 {
     }
 }
 
+👆
+
+
 Second one is buildguild/packages/hardhat/deploy/06_deploy_s1_challenge_6.ts
+
+Save this below code in this file -- 06_deploy_s1_challenge_6.ts --
+
+👇
 
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -78,6 +89,8 @@ const deployS1Challenge6: DeployFunction = async function (hre: HardhatRuntimeEn
 
 export default deployS1Challenge6;
 deployS1Challenge6.tags = ["S1Challenge6"];
+
+👆
 
 Run this comment on terminal second
 
