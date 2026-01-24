@@ -92,6 +92,17 @@ deployS1Challenge6.tags = ["S1Challenge6"];
 
 👆
 
-Run this comment on terminal second
+Run this comment on your terminal second
 
-// yarn deploy --tags S1Challenge6 --network optimism
+bash
+     yarn deploy --tags S1Challenge6 --network optimism --reset
+
+you will see a mint flag on your terminal...
+
+Congradultaions you completed S1-challenge-06
+
+
+
+
+
+
