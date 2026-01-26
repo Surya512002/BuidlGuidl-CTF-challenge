@@ -13,7 +13,7 @@ dotenv.config();
 
 // If you want to deploy to optimism:
 // set TARGET_CHAIN = chains.optimism;
-const TARGET_CHAIN = chains.hardhat;
+const TARGET_CHAIN = chains.optimism;
 
 const LOCAL_CHAIN_5TH_ACCOUNT_PK =
   "0x8b3a350cf5c34c9194ca85829a2df0ec3153be0318b5e2d3348e872092edffba" as const;
@@ -50,9 +50,9 @@ const challenge1Contract = getContract({
 
 async function main() {
   // Writing to a contract
-  const txHash = await challenge1Contract.write.registerMe(["Bob"]);
+  const txHash = await challenge1Contract.write.registerMe(["suryaprakash512"]);
   console.log(
-    `📝 Called 'registerMe' function with address ${myWalletAccount.address} and name 'Bob', txHash: ${txHash}`
+    `📝 Called 'registerMe' function with address ${myWalletAccount.address} and name 'suryaprakash512', txHash: ${txHash}`
   );
 
   // Waits for the Transaction to be included on a Block (one confirmation)
