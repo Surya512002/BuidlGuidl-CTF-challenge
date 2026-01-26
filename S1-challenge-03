@@ -49,11 +49,20 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 export default func;
 func.tags = ["CtfChallenge3"];
 
-
 export default deploySolution;
 deploySolution.tags = ["Challenge2Solution"];
 
-Save this file and go to your second terminal..run this comment = yarn deploy --tags S1Challenge3 --network optimism --reset
+👆
+
+Save this file and go to your second terminal..
+run this comment 
+
+bash          
+       yarn deploy --tags S1Challenge3 --network optimism --reset
+
+You will see a mint flag on your terminal..
+
+Congradulations..You completed the task...
 
 
 
