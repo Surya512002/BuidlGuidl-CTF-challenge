@@ -2,6 +2,10 @@
 
 just create a file packages/hardhat/deploy/04_deploy_ctf_challenge_4.ts 
 
+Save this below code in this file -- 04_deploy_ctf_challenge_4.ts --
+
+👇
+
 import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/types";
 import { HDNodeWallet, Mnemonic } from "ethers";
@@ -54,6 +58,16 @@ const solveS1Challenge4: DeployFunction = async function (hre) {
 export default solveS1Challenge4;
 solveS1Challenge4.tags = ["S1Challenge4"];
 
-run this code on terminal= yarn deploy --tags s1challenge4 --network optimism
+👆
+
+
+run this code on your second terminal 
+
+bash
+      yarn deploy --tags s1challenge4 --network optimism
 
 That's All
+
+You will see a mint flag on your terminal..
+
+Congradulations You completed the task...
