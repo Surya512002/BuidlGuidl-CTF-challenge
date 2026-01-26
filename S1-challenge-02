@@ -2,7 +2,7 @@ Before this challange make sure you setted up your environmet..Read readme.text 
 
 Create a file in this Following Directory - packages/hardhat/contracts/Challenge2Solution.sol
 
-Paste this below code into that Challenge2solution.sol  
+Paste this below code into that -- Challenge2solution.sol --  
 
 👇 
 
@@ -25,6 +25,10 @@ contract Challenge2Solution {
 
 
 Create a Another File in this Directory - packages/hardhat/deploy/02_deploy_challenge_2_solution.ts
+
+save this below code in this file -- 02_deploy_challenge_2_solution.ts --
+
+👇
 
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -53,4 +57,13 @@ const deploySolution: DeployFunction = async function (hre: HardhatRuntimeEnviro
 export default deploySolution;
 deploySolution.tags = ["Challenge2Solution"];
 
-After saving that file click go to your terminal run this code- yarn deploy --network optimism --tags Challenge2Solution
+👆
+
+After saving that file click go to your terminal run this code- 
+
+bash
+      yarn deploy --network optimism --tags Challenge2Solution
+
+You will see a mint flag on your terminal..
+
+Congratulation..You completed the task..
