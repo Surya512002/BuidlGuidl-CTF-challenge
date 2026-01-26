@@ -2,6 +2,8 @@ Make sure You are in your Environment setup
 
 Create a file in this dir-packages/hardhat/contracts create file named Ctfchallenge3.sol Paste below code into this.. 
 
+👇
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -16,7 +18,14 @@ contract CtfChallenge3 {
     }
 }
 
+👆
+
+
 Create a new file in packages/hardhat/deploy/03_deploy_challenge_3_solution.ts
+
+Savee this below code into this File -- 03_deploy_challenge_3_solution.ts --
+ 
+👇
 
 import { DeployFunction } from "hardhat-deploy/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
