@@ -1,6 +1,10 @@
 For challenge 5 you need a both contract and deployment file...
 
-First create a file in contract section and name it Challenge5solver.sol Paste below file in this code..
+First create a file in following dir -- buildguild/packages/hardhat/contracts/Challenge5solver.sol --
+
+Paste below code in this File -- Challenge5solver.sol --
+
+👇
 
 //SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0 <0.9.0;
@@ -36,7 +40,13 @@ contract S1Challenge5Solver {
     }
 }
 
+👆
+
 Next you need deploy file ...create packages/hardhat/deploy/05_deploy_s1_challenge_5.ts
+
+Save this below code in -- 05_deploy_s1_challenge_5.ts -- file
+
+👇
 
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
@@ -79,8 +89,19 @@ const deployS2Challenge5: DeployFunction = async function (hre: HardhatRuntimeEn
 export default deployS2Challenge5;
 deployS2Challenge5.tags = ["S1Challenge5"];
 
+👆
+
 Save abouve code in that file..
 
-run this code to mint the flag..= yarn deploy --tags s1challenge5 --network optimism
+run this code on your second terminal to mint the flag.. 
+
+bash
+yarn deploy --tags s1challenge5 --network optimism
+
+congradulations..You completed the task...
+
+
+
+
 
 
