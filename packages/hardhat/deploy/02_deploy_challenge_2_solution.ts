@@ -1,30 +1,26 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 
-/**
- * Deploys a challenge solution contract
- *
- * @param hre HardhatRuntimeEnvironment object.
- */
-const deployChallengeSolution: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
-  // This is the deployer account:
-  // - localhost: hardhat account 0
-  // - live network: encrypted PK in .env file (use `yarn generate` to generate one or `yarn account:import` to import your own PK)
-  //
-  //   const { deployer } = await hre.getNamedAccounts();
-  //   const { deploy } = hre.deployments;
-  //
-  //   await deploy("Challenge2Solution", {
-  //     from: deployer,
-  //     log: true,
-  //     autoMine: true,
-  //   });
-  //
-  //   console.log("🚩 Challenge Solution contract deployed");
+const deploySolution: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+  const { deployer } = await hre.getNamedAccounts();
+  const { deploy } = hre.deployments;
+
+  // --- DELETE OR COMMENT OUT THIS LINE ---
+  // const challenge2 = await hre.ethers.getContract("Challenge2");
+
+  // --- ADD THIS LINE ---
+  // PASTE THE REAL ADDRESS FROM THE WEBSITE BELOW
+  const challenge2Address = "0x0b997E0a306c47EEc755Df75fad7F41977C5582d";
+
+  console.log("😈 Attacking Challenge 2 at:", challenge2Address);
+
+  await deploy("Challenge2Solution", {
+    from: deployer,
+    args: [challenge2Address], // Use the variable you just created
+    log: true,
+    autoMine: true,
+  });
 };
 
-export default deployChallengeSolution;
-
-// Tags are useful if you have multiple deploy files and only want to run one of them.
-// e.g. yarn deploy --tags solution2
-deployChallengeSolution.tags = ["solution2"];
+export default deploySolution;
+deploySolution.tags = ["Challenge2Solution"];
